@@ -1,0 +1,3 @@
+plugins {
+    id 'com.latihan.scala.scala-library-conventions'
+}
