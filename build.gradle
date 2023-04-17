@@ -1,0 +1,55 @@
+plugins {
+    id 'scala'
+}
+
+allprojects {
+
+    apply plugin: 'scala'
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // Define dependency versions as constraints
+        implementation 'org.apache.commons:commons-text:' + apacheCommonTextVersion
+
+        implementation 'org.scala-lang:scala-library:' + scalaLibraryVersion
+
+        // Use JUnit Jupiter for testing.
+        testImplementation 'org.junit.jupiter:junit-jupiter:' + junitJupiterVersion
+
+        // https://mvnrepository.com/artifact/org.scalatest/scalatest
+        testImplementation 'org.scalatest:scalatest_3:' + scalaTestVersion
+
+        // https://mvnrepository.com/artifact/org.scalatestplus/mockito-4-2
+        testImplementation 'org.scalatestplus:mockito-4-2_3:' + scalaTestPlusMockitoVersion
+    }
+
+    tasks.named('test') {
+        // Use JUnit Platform for unit tests.
+        useJUnitPlatform()
+    }
+}
+
+project ('latihan-scala-basic') {
+    dependencies {
+        // https://mvnrepository.com/artifact/com.google.inject/guice
+        implementation 'com.google.inject:guice:' + googleInjectGuiceVersion
+
+        // https://mvnrepository.com/artifact/org.scalactic/scalactic
+        implementation 'org.scalactic:scalactic_3:' + scalacticVersion
+
+        implementation project(':common')
+    }
+}
+
+project ('common') {
+    dependencies {
+        // https://mvnrepository.com/artifact/com.google.inject/guice
+        implementation 'com.google.inject:guice:' + googleInjectGuiceVersion
+
+        // https://mvnrepository.com/artifact/org.scalactic/scalactic
+        implementation 'org.scalactic:scalactic_3:' + scalacticVersion
+    }
+}
+
