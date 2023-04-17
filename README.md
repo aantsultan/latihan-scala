@@ -1,5 +1,5 @@
 LATIHAN SCALA
 --
-This project is used for exercise basic **Scala**, **Google Guice DI Framework**, and **ScalaTest**
+This project is used for exercise basic of **Scala**, **Google Guice DI Framework**, **ScalaTest** and **Apache Spark**
 
 ##### 📌 Created by Aant
