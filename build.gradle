@@ -31,7 +31,7 @@ allprojects {
     }
 }
 
-project ('latihan-scala-basic') {
+project('latihan-scala-basic') {
     dependencies {
         // https://mvnrepository.com/artifact/com.google.inject/guice
         implementation 'com.google.inject:guice:' + googleInjectGuiceVersion
@@ -43,7 +43,29 @@ project ('latihan-scala-basic') {
     }
 }
 
-project ('common') {
+
+project('latihan-scala-google-guice-di') {
+    dependencies {
+        // https://mvnrepository.com/artifact/com.google.inject/guice
+        implementation 'com.google.inject:guice:' + googleInjectGuiceVersion
+
+        // https://mvnrepository.com/artifact/org.scalactic/scalactic
+        implementation 'org.scalactic:scalactic_3:' + scalacticVersion
+
+        // https://mvnrepository.com/artifact/org.apache.spark/spark-core
+        implementation 'org.apache.spark:spark-core_2.13:' + apacheSparkCoreVersion
+
+        // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
+        implementation 'org.apache.spark:spark-sql_2.13:' + apacheSparkSqlVersion
+
+        // https://mvnrepository.com/artifact/com.typesafe/config
+        implementation 'com.typesafe:config:' + typeSafeVersion
+
+        implementation project(':common')
+    }
+}
+
+project('common') {
     dependencies {
         // https://mvnrepository.com/artifact/com.google.inject/guice
         implementation 'com.google.inject:guice:' + googleInjectGuiceVersion
